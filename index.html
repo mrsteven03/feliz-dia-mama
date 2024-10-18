@@ -115,15 +115,18 @@
 
     <script>
         window.onload = function () {
-            // Crear el elemento audio dinámicamente
             var audio = document.createElement("audio");
-            audio.src = "https://mrsteven03.github.io/feliz-dia-mama/KAROL%20G%20-%20Si%20Antes%20Te%20Hubiera%20Conocido%20(Dj%20Dark%20Remix).mp3"; // Enlace directo a GitHub Pages
-            audio.autoplay = true;
+            audio.src = "https://mrsteven03.github.io/feliz-dia-mama/KAROL%20G%20-%20Si%20Antes%20Te%20Hubiera%20Conocido%20(Dj%20Dark%20Remix).mp3";
             audio.loop = true;
             audio.style.display = "none";  // Ocultar el reproductor visual
-    
-            // Agregar el audio al body
             document.body.appendChild(audio);
+
+            // Agregar evento de clic a la sección cover
+            document.getElementById("cover").addEventListener("click", function () {
+                audio.play();
+                this.style.pointerEvents = "none"; // Deshabilitar el evento después de hacer clic
+                this.querySelector("h2").textContent = "¡Disfruta de la música!"; // Cambiar texto si lo deseas
+            });
         };
     </script>
       
